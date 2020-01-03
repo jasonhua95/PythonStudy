@@ -55,6 +55,7 @@ print(str,str[0],str[2:5],str[2:-1],str * 2,str + "测试")
 # 字典的构造函数Dict，dict([('1', 1), ('2', 2), ('3', 3)])， {x: x**2 for x in (2, 4, 6)}，dict(a=1, b=2, c=3)
 # 格式化： print('Hi, %s, you have $%d.' % ('Michael', 1000000)) %d整数，%f浮点数，%s字符串，%x十六进制整数
 # 格式化f：f"List is too long ({n} elements, expected <= 10)"
+# 关键字end，可以将结果输出到同一行，例如： print(b, end=',') 
 
 
 # 空行，函数之间或者类之间用空行分隔
@@ -68,3 +69,4 @@ print(str,str[0],str[2:5],str[2:-1],str * 2,str + "测试")
 # r'' 表示内部的字符串不转义
 # 逻辑运算符:and or not & | ^  <<  >> ~ in   not in
 
+# 迭代器和生成器：iter() 和 next()。
