@@ -48,7 +48,7 @@ str = "jasonhua"
 print(str,str[0],str[2:5],str[2:-1],str * 2,str + "测试")
 '''
 
-# 列表LList: t = [1,"1","cd"] ,t[-1::-1]翻转字符串
+# 列表List: t = [1,"1","cd"] ,t[-1::-1]翻转字符串
 # 元组Tuple: tuple = (1,"1","cd") ，元组不能修改
 # 集合set：{}或者set，创建空集合必须用set，重复的自动去掉，输出顺序两次可能不一样
 # 字典Dictionary:列表是有序的对象集合，字典是无序的key：value集合{},key唯一，{}空字典
@@ -69,4 +69,44 @@ print(str,str[0],str[2:5],str[2:-1],str * 2,str + "测试")
 # r'' 表示内部的字符串不转义
 # 逻辑运算符:and or not & | ^  <<  >> ~ in   not in
 
-# 迭代器和生成器：iter() 和 next()。
+# 迭代器和生成器：iter() 和 next();yield
+'''
+import sys
+def finbonacci(n):
+    a,b,counter=0,1,0
+    while(True):
+        if(counter>n):
+            return
+        yield a
+        a,b=b,a+b
+        counter+=1
+f=finbonacci(10)
+while True:
+    try:
+        print(next(f),end=" ")
+    except StopIteration:
+        sys.exit()
+'''
+
+# 定义函数： def，不返回值return None,可以不写，返回多个值return a,b相当于tuple
+# 占位符：pass，也就是什么都不执行，相当于空{}
+# 不定长参数：def printinfo( arg1, *vartuple ): ，加了星号 * 的参数会以元组(tuple)的形式导入，存放所有未命名的变量参数。两个星**，将以dict的方式存在
+# 匿名函数：sum = lambda arg1, arg2: arg1 + arg2 ；  sum( 10, 20 )  
+''' 递归出栈溢出
+def fact(n):
+    if(n==1):
+        return 1
+    return n*fact(n-1)
+t = fact(1000)
+print(t)
+'''
+def fact(n):
+    return fact_iter(n, 1)
+
+def fact_iter(num, product):
+    if num == 1:
+        return product
+    return fact_iter(num - 1, num + product)
+
+t = fact(1000)
+print(t)
